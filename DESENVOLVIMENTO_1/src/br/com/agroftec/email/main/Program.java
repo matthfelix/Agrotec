@@ -10,12 +10,12 @@ import br.com.agroftec.email.ReaderFile;
 public class Program {
 	public static void main(String args[]) throws FileNotFoundException {
 		ReaderFile r = new ReaderFile();
-		Conect c = new Conect();
+		Connection c = Conect.getConnection();
 		r.openFile();
 		r.readFile();
 		try {
-			c.getConnection();
-			PreparedStatement envio =  ((Connection) c).prepareStatement("INSERT INTO produto(codigo_produto,descricao_produto,preco_produto)");
+			
+			PreparedStatement envio =  c.prepareStatement("INSERT INTO produto(codigo_produto,descricao_produto,preco_produto)");
 			
 		}
 		r.closeFile();
