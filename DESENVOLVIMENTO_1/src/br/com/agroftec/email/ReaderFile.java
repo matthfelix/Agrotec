@@ -13,11 +13,11 @@ public class ReaderFile {
 		html = new Scanner(new File("/home/ti/Documentos/teste.html"));
 	}
 	public void readFile() {
-		String b = "";
+		String a = "";
 		while(html.hasNext()) {
-			b += html.next() + "+";
+			a += html.next() + "+";
 		}
-		this.lido = b;
+		this.lido = a;
 		
 	}
 	public void closeFile() {
