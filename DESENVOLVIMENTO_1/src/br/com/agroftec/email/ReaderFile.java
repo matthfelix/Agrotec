@@ -6,17 +6,19 @@ import java.util.Scanner;
 
 public class ReaderFile {
 	private Scanner html;
-
+	public String lido;
 
 	
 	public void openFile() throws FileNotFoundException {
 		html = new Scanner(new File("/home/ti/Documentos/teste.html"));
 	}
 	public void readFile() {
+		String a = "";
 		while(html.hasNext()) {
-			String a = html.next() + "+";
-			System.out.print(a);
+			a += html.next() + "+";
 		}
+		this.lido = a;
+		
 	}
 	public void closeFile() {
 		html.close();
